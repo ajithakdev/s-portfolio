@@ -60,7 +60,7 @@ const Description = styled.div`
   font-size: 15px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_primary + 99};
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   line-height: 1.6;
 
   @media only screen and (max-width: 768px) {
@@ -76,7 +76,9 @@ const Skills = styled.div`
   width: 100%;
   display: flex;
   gap: 12px;
-  margin-top: -10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 `;
 
 const Skill = styled.div`
@@ -98,7 +100,7 @@ const VelocityGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  margin: 12px 0 6px 0;
+  margin: 14px 0 10px 0;
   background: rgba(133, 76, 230, 0.08);
   border: 1px solid rgba(133, 76, 230, 0.28);
   border-radius: 8px;
@@ -123,17 +125,30 @@ const MetricLabel = styled.div`
   margin-top: 2px;
 `;
 
+const WorkProfileWrapper = styled.div`
+  margin: 10px 0 14px 0;
+  display: flex;
+  align-items: center;
+`;
+
 const WorkProfileLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 6px;
   font-size: 12.5px;
-  color: ${({ theme }) => theme.primary};
+  color: #c49eff;
+  background: rgba(133, 76, 230, 0.14);
+  border: 1px solid rgba(133, 76, 230, 0.35);
+  padding: 6px 12px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
+  transition: all 0.2s ease;
+
   &:hover {
-    text-decoration: underline;
+    background: rgba(133, 76, 230, 0.25);
+    border-color: #854ce6;
+    color: #ffffff;
   }
 `;
 
@@ -203,28 +218,27 @@ const ExperienceCard = ({ experience }) => {
                 <MetricLabel>Latency Slashed</MetricLabel>
               </div>
             </VelocityGrid>
-            <WorkProfileLink
-              href="https://github.com/ajithakdev-valor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>⚡</span> View Verified Production Cadence (@ajithakdev-valor) ↗
-            </WorkProfileLink>
+            <WorkProfileWrapper>
+              <WorkProfileLink
+                href="https://github.com/ajithakdev-valor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>⚡</span> View Verified Production Cadence (@ajithakdev-valor) ↗
+              </WorkProfileLink>
+            </WorkProfileWrapper>
           </>
         )}
 
         {experience?.skills && (
-          <>
-            <br />
-            <Skills>
-              <b>Skills</b>
-              <ItemWrapper>
-                {experience?.skills?.map((skill, index) => (
-                  <Skill key={index}>• {skill}</Skill>
-                ))}
-              </ItemWrapper>
-            </Skills>
-          </>
+          <Skills>
+            <b>Skills</b>
+            <ItemWrapper>
+              {experience?.skills?.map((skill, index) => (
+                <Skill key={index}>• {skill}</Skill>
+              ))}
+            </ItemWrapper>
+          </Skills>
         )}
       </Description>
     </VerticalTimelineElement>
