@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import {
-  FacebookRounded,
-  Instagram,
+  GitHub,
   LinkedIn,
   Twitter,
 } from "@mui/icons-material";
@@ -93,20 +92,17 @@ const Footer = () => {
           <NavLink href="#Education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display">
-            <FacebookRounded />
+          <SocialMediaIcon href={Bio.github} target="_blank" rel="noopener noreferrer">
+            <GitHub />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <Twitter />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display">
+          <SocialMediaIcon href={Bio.linkedin} target="_blank" rel="noopener noreferrer">
             <LinkedIn />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
-            <Instagram />
+          <SocialMediaIcon href={Bio.twitter} target="_blank" rel="noopener noreferrer">
+            <Twitter />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 ajithakdev. All rights reserved.</Copyright>
+        <Copyright>&copy; {new Date().getFullYear()} Ajith Kumar Karudasevai (ajithakdev). All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );
