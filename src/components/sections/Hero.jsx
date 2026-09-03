@@ -35,6 +35,7 @@ const HeroInnerContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -220,7 +221,10 @@ const Hero = () => {
           <HeroBgAnimation />
         </HeroBg>
 
-        <motion.div {...headContainerAnimation} style={{ width: "100%" }}>
+        <motion.div
+          {...headContainerAnimation}
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
           <HeroInnerContainer>
             <HeroLeftContainer>
               <motion.div {...headTextAnimation}>
