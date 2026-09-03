@@ -61,7 +61,7 @@ const Education = () => {
           My academic foundation in Computer Science & Engineering.
         </Desc>
 
-        <VerticalTimeline lineColor="rgba(133, 76, 230, 0.35)">
+        <VerticalTimeline animate={false} lineColor="rgba(133, 76, 230, 0.35)">
           {education.map((edu, index) => (
             <EducationCard key={`education-${index}`} education={edu} />
           ))}

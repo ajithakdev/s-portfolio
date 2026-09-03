@@ -245,16 +245,15 @@ const Hero = () => {
 
               <motion.div {...headContentAnimation}>
                 <SubTitle>{Bio.description}</SubTitle>
+                <ButtonGroup>
+                  <ResumeButton href={Bio.resume} target="_blank" rel="noopener noreferrer">
+                    Check Resume ↗
+                  </ResumeButton>
+                  <SecondaryButton href="#Projects">
+                    View Architecture & Code
+                  </SecondaryButton>
+                </ButtonGroup>
               </motion.div>
-
-              <ButtonGroup>
-                <ResumeButton href={Bio.resume} target="_blank" rel="noopener noreferrer">
-                  Check Resume ↗
-                </ResumeButton>
-                <SecondaryButton href="#Projects">
-                  View Architecture & Code
-                </SecondaryButton>
-              </ButtonGroup>
             </HeroLeftContainer>
 
             <HeroRightContainer>

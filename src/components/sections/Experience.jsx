@@ -62,7 +62,7 @@ const Experience = () => {
           Production backend engineering, cloud integrations, and technical systems mentorship.
         </Desc>
 
-        <VerticalTimeline lineColor="rgba(133, 76, 230, 0.35)">
+        <VerticalTimeline animate={false} lineColor="rgba(133, 76, 230, 0.35)">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
