@@ -122,6 +122,24 @@ const ActionButton = styled.a`
   }
 `;
 
+const DisabledActionButton = styled.div`
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #8b949e;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  cursor: not-allowed;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+`;
+
 const ProjectCard = ({ project }) => {
   const hasLiveDemo = project.webapp && project.webapp !== project.github;
 
@@ -144,9 +162,15 @@ const ProjectCard = ({ project }) => {
       </Top>
 
       <ActionContainer>
-        <ActionButton href={project.github} target="_blank" rel="noopener noreferrer">
-          {project.category === "production" ? "Architecture" : "Source Code"}
-        </ActionButton>
+        {project.category === "production" ? (
+          <DisabledActionButton title="Proprietary production system at The Valor Solution (private enterprise codebase)">
+            <span>🔒</span> Proprietary Production System
+          </DisabledActionButton>
+        ) : (
+          <ActionButton href={project.github} target="_blank" rel="noopener noreferrer">
+            Source Code
+          </ActionButton>
+        )}
         {hasLiveDemo && (
           <ActionButton href={project.webapp} target="_blank" rel="noopener noreferrer" primary="true">
             Live Demo ↗

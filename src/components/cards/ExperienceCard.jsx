@@ -1,6 +1,6 @@
 import React from "react";
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import styled from "styled-components";
+import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 const Top = styled.div`
   width: 100%;
@@ -8,35 +8,43 @@ const Top = styled.div`
   max-width: 100%;
   gap: 12px;
 `;
+
 const Image = styled.img`
   height: 50px;
   border-radius: 10px;
   margin-top: 4px;
+
   @media only screen and (max-width: 768px) {
     height: 40px;
   }
 `;
+
 const Body = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
+
 const Role = styled.div`
   font-size: 18px;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary + 99};
+
   @media only screen and (max-width: 768px) {
     font-size: 14px;
   }
 `;
+
 const Company = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_secondary + 99};
+
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
 `;
+
 const Date = styled.div`
   font-size: 12px;
   font-weight: 400;
@@ -53,23 +61,26 @@ const Description = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.text_primary + 99};
   margin-bottom: 10px;
+  line-height: 1.6;
+
   @media only screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;
+
+const Span = styled.div`
+  display: block;
+`;
+
 const Skills = styled.div`
   width: 100%;
   display: flex;
   gap: 12px;
   margin-top: -10px;
 `;
-const Span = styled.div`
-  display: -webkit-box;
-  max-width: 100%;
-`;
 
 const Skill = styled.div`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_primary + 99};
   @media only screen and (max-width: 768px) {
@@ -81,6 +92,49 @@ const ItemWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+`;
+
+const VelocityGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0 6px 0;
+  background: rgba(133, 76, 230, 0.08);
+  border: 1px solid rgba(133, 76, 230, 0.28);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+`;
+
+const MetricValue = styled.div`
+  font-size: 15px;
+  font-weight: 700;
+  color: #7ee787;
+`;
+
+const MetricLabel = styled.div`
+  font-size: 10.5px;
+  color: ${({ theme }) => theme.text_secondary};
+  margin-top: 2px;
+`;
+
+const WorkProfileLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: ${({ theme }) => theme.primary};
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ExperienceCard = ({ experience }) => {
@@ -132,6 +186,33 @@ const ExperienceCard = ({ experience }) => {
       </Top>
       <Description>
         {experience?.desc && <Span>{experience.desc}</Span>}
+
+        {experience?.id === 0 && (
+          <>
+            <VelocityGrid>
+              <div>
+                <MetricValue>3,567+</MetricValue>
+                <MetricLabel>Enterprise Commits</MetricLabel>
+              </div>
+              <div>
+                <MetricValue>240 Days/Yr</MetricValue>
+                <MetricLabel>Mon–Fri Cadence</MetricLabel>
+              </div>
+              <div>
+                <MetricValue>26s ➔ 19s</MetricValue>
+                <MetricLabel>Latency Slashed</MetricLabel>
+              </div>
+            </VelocityGrid>
+            <WorkProfileLink
+              href="https://github.com/ajithakdev-valor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>⚡</span> View Verified Production Cadence (@ajithakdev-valor) ↗
+            </WorkProfileLink>
+          </>
+        )}
+
         {experience?.skills && (
           <>
             <br />

@@ -10,16 +10,27 @@ export const Bio = {
   description:
     "I am a backend engineer with ~2 years of experience building production systems for healthcare SaaS. Most of my work centers around Node.js, TypeScript, DocumentDB/MongoDB, and AWS. At The Valor Solution, I co-designed an in-house Form Builder to eliminate a third-party subscription, built automated fax routing workflows, and re-architected DocumentDB aggregations to cut query latency from 26s down to 19s. Beyond cloud backends, I build developer tools and write systems software in C and Rust.",
   github: "https://github.com/ajithakdev",
-  resume:
-    "https://drive.google.com/file/d/1wRL9EOVKFSNDiz4joeYTZPBe9S3hno0D/view?usp=sharing",
+  github_work: "https://github.com/ajithakdev-valor",
+  resume: "/Ajith_Kumar_K_Backend_Engineer_2YOE.pdf",
   linkedin: "https://www.linkedin.com/in/ajithakdev/",
   twitter: "https://x.com/ajithakdev",
+  bluesky: "https://bsky.app/profile/ajithakdev.bsky.social",
+  instagram_personal: "https://www.instagram.com/just.ajithkumar/",
+  instagram_work: "https://www.instagram.com/theajithakdev/",
   email: "cseajithak@gmail.com",
+  work_stats: {
+    total_contributions: "3,567+",
+    active_days_2025: "240 Days",
+    cadence: "Daily Mon–Fri Production Delivery",
+    contributions_2026: "1,398 (YTD)",
+    contributions_2025: "1,815",
+    contributions_2024: "354",
+  },
   telemetry: [
     { label: "Production Experience", value: "2+ Years" },
+    { label: "Enterprise Contributions", value: "3,567+ (@Valor)" },
     { label: "Pipeline Latency Reduction", value: "26s ➔ 19s" },
-    { label: "Client-Side Dev Tools", value: "9 Built (toolglass)" },
-    { label: "Infrastructure Managed", value: "150+ Systems" },
+    { label: "Annual Active Workdays", value: "240 Days/Yr" },
   ],
 };
 
