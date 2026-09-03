@@ -128,28 +128,55 @@ const MetricLabel = styled.div`
 const WorkProfileWrapper = styled.div`
   margin: 10px 0 14px 0;
   display: flex;
-  align-items: center;
+  width: 100%;
 `;
 
 const WorkProfileLink = styled.a`
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
-  color: #c49eff;
-  background: rgba(133, 76, 230, 0.14);
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(133, 76, 230, 0.12);
   border: 1px solid rgba(133, 76, 230, 0.35);
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(133, 76, 230, 0.25);
+    background: rgba(133, 76, 230, 0.22);
     border-color: #854ce6;
-    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(133, 76, 230, 0.25);
   }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+`;
+
+const WorkProfileLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #e6edf3;
+`;
+
+const WorkProfileHandle = styled.span`
+  font-size: 11.5px;
+  font-family: monospace;
+  font-weight: 600;
+  color: #c49eff;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(133, 76, 230, 0.3);
+  display: inline-block;
 `;
 
 const ExperienceCard = ({ experience }) => {
@@ -224,7 +251,11 @@ const ExperienceCard = ({ experience }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>⚡</span> View Verified Production Cadence (@ajithakdev-valor) ↗
+                <WorkProfileLeft>
+                  <span>⚡</span>
+                  <span>Verified Production Cadence</span>
+                </WorkProfileLeft>
+                <WorkProfileHandle>@ajithakdev-valor ↗</WorkProfileHandle>
               </WorkProfileLink>
             </WorkProfileWrapper>
           </>
