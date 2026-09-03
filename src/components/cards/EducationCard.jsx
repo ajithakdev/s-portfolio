@@ -75,27 +75,38 @@ const EducationCard = ({ education }) => {
   return (
     <VerticalTimelineElement
       icon={
-        <img
-          width="100%"
-          height="100%"
-          alt={education?.school}
-          style={{ borderRadius: "50%", objectFit: "cover" }}
-          src={education?.img}
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <img
+            alt={education?.school}
+            style={{ width: "65%", height: "65%", objectFit: "contain" }}
+            src={education?.img}
+          />
+        </div>
       }
+      iconStyle={{
+        background: "#171721",
+        boxShadow: "0 0 0 3px #854CE6, 0 4px 12px rgba(0, 0, 0, 0.5)",
+      }}
       contentStyle={{
         display: "flex",
         flexDirection: "column",
         gap: "12px",
-        background: "#1d1836",
+        background: "rgba(17, 25, 40, 0.88)",
         color: "#fff",
-        boxShadow: "rgba(23, 92, 230, 0.15) 0px 4px 24px",
-        backgroundColor: "rgba(17, 25, 40, 0.83)",
-        border: "1px solid rgba(255, 255, 255, 0.125)",
-        borderRadius: "6px",
+        boxShadow: "rgba(23, 92, 230, 0.12) 0px 4px 24px",
+        border: "1px solid rgba(255, 255, 255, 0.12)",
+        borderRadius: "12px",
       }}
       contentArrowStyle={{
-        borderRight: "7px solid  rgba(255, 255, 255, 0.3)",
+        borderRight: "7px solid rgba(255, 255, 255, 0.2)",
       }}
       date={education?.date}
     >

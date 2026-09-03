@@ -4,13 +4,12 @@ import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
 import { education } from "../../data/constants";
 import EducationCard from "../cards/EducationCard";
-import EarthCanvas from "../canvas/Earth";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
-  position: rlative;
+  justify-content: center;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -28,6 +27,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const Title = styled.div`
   font-size: 52px;
   text-align: center;
@@ -39,13 +39,16 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
+
 const Desc = styled.div`
   font-size: 18px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   color: ${({ theme }) => theme.text_secondary};
+  max-width: 750px;
+  line-height: 1.5;
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 
@@ -54,21 +57,15 @@ const Education = () => {
     <Container id="Education">
       <Wrapper>
         <Title>Education</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          My education has been a journey of self-discovery and development. My
-          The educational details are as follows.
+        <Desc style={{ marginBottom: "40px" }}>
+          My academic foundation in Computer Science & Engineering.
         </Desc>
 
-        <VerticalTimeline>
-          {education.map((education, index) => (
-            <EducationCard key={`education-${index}`} education={education} />
+        <VerticalTimeline lineColor="rgba(133, 76, 230, 0.35)">
+          {education.map((edu, index) => (
+            <EducationCard key={`education-${index}`} education={edu} />
           ))}
         </VerticalTimeline>
-        <EarthCanvas />
       </Wrapper>
     </Container>
   );

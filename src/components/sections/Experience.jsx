@@ -8,9 +8,9 @@ import ExperienceCard from "../cards/ExperienceCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  justify-content: center;
   margin-top: 50px;
-  position: rlative;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const Title = styled.div`
   font-size: 52px;
   text-align: center;
@@ -39,13 +40,16 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
+
 const Desc = styled.div`
   font-size: 18px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   color: ${({ theme }) => theme.text_secondary};
+  max-width: 750px;
+  line-height: 1.5;
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 
@@ -53,17 +57,12 @@ const Experience = () => {
   return (
     <Container id="Experience">
       <Wrapper>
-        <Title>Demonstrated Abilities & Skills</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          My relevant experience in technical tasks, problems, and working with different
-          Projects and solutions.
+        <Title>Work Experience</Title>
+        <Desc style={{ marginBottom: "40px" }}>
+          Production backend engineering, cloud integrations, and technical systems mentorship.
         </Desc>
 
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="rgba(133, 76, 230, 0.35)">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

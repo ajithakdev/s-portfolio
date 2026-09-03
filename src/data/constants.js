@@ -100,7 +100,7 @@ export const skills = [
       {
         name: "TypeORM",
         image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/typeorm/typeorm-original.svg",
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
       },
       {
         name: "Batch Processing",
@@ -130,7 +130,7 @@ export const skills = [
       {
         name: "Rust",
         image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg",
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg",
       },
       {
         name: "C",
@@ -251,7 +251,7 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
+    img: "/university.svg",
     school: "Anna University Regional Campus, Madurai",
     date: "Nov 2020 – May 2024",
     grade: "8.47 CGPA",
@@ -260,7 +260,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+    img: "/school.svg",
     school: "Sri Vidya Mandir Matric. Hr. Sec. School",
     date: "Jun 2018 – Mar 2020",
     grade: "81%",
@@ -378,7 +378,7 @@ export const projects = [
     description:
       "An auto-pasting clipboard manager applet written in Rust for System76\x27s COSMIC desktop (Pop!_OS). It monitors clipboard history and pastes selected snippets directly to your active window cursor without manual Ctrl+V.",
     image:
-      "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg",
     tags: ["Rust", "COSMIC Desktop", "Pop!_OS", "Wayland", "Systems Programming"],
     category: "systems",
     github: "https://github.com/ajithakdev/clip-paste",

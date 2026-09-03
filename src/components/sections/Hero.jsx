@@ -11,7 +11,6 @@ import {
   headContentAnimation,
   headTextAnimation,
 } from "../../utils/motion";
-import StarCanvas from "../canvas/Stars";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -21,15 +20,14 @@ const HeroContainer = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    padding: 66px 16px;
+    padding: 50px 16px;
   }
 
   @media (max-width: 640px) {
     padding: 32px 16px;
   }
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+
 const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
@@ -42,6 +40,7 @@ const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
+
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
@@ -49,11 +48,11 @@ const HeroLeftContainer = styled.div`
     order: 2;
     margin-bottom: 30px;
     display: flex;
-    gap: 6px;
     flex-direction: column;
     align-items: center;
   }
 `;
+
 const HeroRightContainer = styled.div`
   width: 100%;
   order: 2;
@@ -64,154 +63,152 @@ const HeroRightContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-contents: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 `;
 
 const Title = styled.div`
   font-weight: 700;
-  font-size: 50px;
+  font-size: 48px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 1.25;
 
   @media (max-width: 960px) {
     text-align: center;
+    font-size: 36px;
   }
 
-  @media (max-width: 960px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
+  @media (max-width: 640px) {
+    font-size: 30px;
   }
 `;
 
 const TextLoop = styled.div`
   font-weight: 600;
-  font-size: 32px;
-  display: flex;
-  gap: 12px;
+  font-size: 28px;
+  display: block;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 1.4;
+  margin: 14px 0 20px 0;
+  min-height: 78px;
 
   @media (max-width: 960px) {
     text-align: center;
+    font-size: 22px;
+    min-height: 62px;
   }
 
-  @media (max-width: 960px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
+  @media (max-width: 640px) {
+    font-size: 19px;
+    min-height: 56px;
   }
 `;
 
-const Span = styled.div`
-  cursor: pointer;
+const Prefix = styled.span`
+  white-space: nowrap;
+  margin-right: 10px;
+`;
+
+const Span = styled.span`
   color: ${({ theme }) => theme.primary};
+  display: inline;
 `;
 
 const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  color: ${({ theme }) => theme.text_secondary};
+  max-width: 580px;
 
   @media (max-width: 960px) {
     text-align: center;
+    font-size: 15px;
   }
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 
   @media (max-width: 960px) {
-    font-size: 16px;
-    line-height: 32px;
+    justify-content: center;
   }
 `;
 
 const ResumeButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
   text-decoration: none;
-
-  width: 95%;
-  max-width: 300px;
   text-align: center;
-  padding: 16px 0;
-
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
-  border-radius: 50px;
+  padding: 14px 28px;
+  background: linear-gradient(225deg, #854ce6 0%, #be1adb 100%);
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 20px rgba(133, 76, 230, 0.4);
 
-     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-    color: white;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(133, 76, 230, 0.6);
+    filter: brightness(1.1);
+  }
+`;
+
+const SecondaryButton = styled.a`
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: ${({ theme }) => theme.text_primary};
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.primary + 15};
+  }
 `;
 
 const Img = styled.img`
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
+  max-width: 360px;
+  max-height: 360px;
+  border: 3px solid ${({ theme }) => theme.primary};
+  box-shadow: 0 0 35px rgba(133, 76, 230, 0.35);
 
-  @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
+  @media (max-width: 960px) {
+    max-width: 260px;
+    max-height: 260px;
   }
 `;
 
 const HeroBg = styled.div`
   position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
-  overflow: hidden;
-  padding: 0 30px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.45;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
   @media (max-width: 960px) {
     justify-content: center;
-    padding: 0 0px;
+    opacity: 0.3;
   }
 `;
 
@@ -220,11 +217,10 @@ const Hero = () => {
     <div id="About">
       <HeroContainer>
         <HeroBg>
-          <StarCanvas />
           <HeroBgAnimation />
         </HeroBg>
 
-        <motion.div {...headContainerAnimation}>
+        <motion.div {...headContainerAnimation} style={{ width: "100%" }}>
           <HeroInnerContainer>
             <HeroLeftContainer>
               <motion.div {...headTextAnimation}>
@@ -232,13 +228,15 @@ const Hero = () => {
                   Hi, I am <br /> {Bio.name}
                 </Title>
                 <TextLoop>
-                  I am a
+                  <Prefix>I build as a</Prefix>
                   <Span>
                     <Typewriter
                       options={{
                         strings: Bio.roles,
                         autoStart: true,
                         loop: true,
+                        delay: 45,
+                        deleteSpeed: 25,
                       }}
                     />
                   </Span>
@@ -249,13 +247,19 @@ const Hero = () => {
                 <SubTitle>{Bio.description}</SubTitle>
               </motion.div>
 
-              <ResumeButton href={Bio.resume} target="_blank">
-                Check Resume
-              </ResumeButton>
+              <ButtonGroup>
+                <ResumeButton href={Bio.resume} target="_blank" rel="noopener noreferrer">
+                  Check Resume ↗
+                </ResumeButton>
+                <SecondaryButton href="#Projects">
+                  View Architecture & Code
+                </SecondaryButton>
+              </ButtonGroup>
             </HeroLeftContainer>
+
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
-                <Tilt>
+                <Tilt options={{ max: 20, scale: 1.03 }}>
                   <Img src={HeroImg} alt={Bio.name} />
                 </Tilt>
               </motion.div>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gradCap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854CE6" />
+      <stop offset="100%" stop-color="#be1adb" />
+    </linearGradient>
+    <linearGradient id="goldTassel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <!-- Mortarboard Diamond Top -->
+  <polygon points="32,8 60,22 32,36 4,22" fill="url(#gradCap)" stroke="#A78BFA" stroke-width="1.5" />
+  <!-- Skull Cap Underneath -->
+  <path d="M16,28 L16,42 C16,50 48,50 48,42 L48,28 C42,32 22,32 16,28 Z" fill="#6D28D9" />
+  <!-- Ribbon / Headband -->
+  <path d="M16,35 C24,40 40,40 48,35" stroke="#A78BFA" stroke-width="1.5" fill="none" />
+  <!-- Tassel Button -->
+  <circle cx="32" cy="22" r="2.5" fill="url(#goldTassel)" />
+  <!-- Tassel Cord & Fringe -->
+  <path d="M32,22 Q48,26 50,38 L50,48" fill="none" stroke="url(#goldTassel)" stroke-width="2" stroke-linecap="round" />
+  <rect x="48" y="46" width="4" height="8" rx="1" fill="url(#goldTassel)" />
+</svg>
